@@ -1,7 +1,5 @@
 package br.com.adrielrocha.regescweb.controllers;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +27,15 @@ public class ProfessorController {
         ModelAndView mv = new ModelAndView("professores/index");
         mv.addObject("professores", professores);
 
-        
+        return mv;
+    }
+
+    @GetMapping("/professor/new")
+    public ModelAndView nnew() {
+
+        ModelAndView mv = new ModelAndView("professores/new");
+        mv.addObject("statusProfessor", StatusProfessor.values());
+
         
         return mv;
     }
